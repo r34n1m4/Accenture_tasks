@@ -16,6 +16,8 @@ class BankAccountTest {
     @Test
     @DisplayName("Withdraw 500")
     void withdraw() {
-        assertEquals(500.00, bankAccount.withdraw(500.00));
+                assertAll(
+                () -> assertEquals(500.00, bankAccount.withdraw(500.00)),
+                () -> assertEquals(-500.00, bankAccount.withdraw(1500.00))); //this test failing, need to change conditions in the method withdraw();
     }
 }
